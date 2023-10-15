@@ -1,12 +1,24 @@
 1 Задание
 
 SELECT "Couriers".login, 
-COUNT("Orders".address) 
+COUNT(*) 
 FROM "Orders" 
 INNER JOIN "Couriers" ON "Couriers".id = "Orders"."courierId" 
 WHERE "Orders"."inDelivery" = TRUE 
 GROUP BY "Couriers".login;
 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Доработка:
+
+SELECT "Couriers".login, 
+COUNT(*) 
+FROM "Couriers" 
+INNER JOIN "Orders" ON "Orders"."courierId" = "Couriers".id
+WHERE "Orders"."inDelivery" = TRUE 
+GROUP BY "Couriers".login;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ============================================================================
 2 задание
 
